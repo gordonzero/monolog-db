@@ -19,7 +19,7 @@ Open up `config/logging.php` and find the `channels` key. Add the following chan
 ],
 ~~~
 
-Migrate tables.
+Migrate the tables.
 
 ~~~
 php artisan migrate
