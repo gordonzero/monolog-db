@@ -15,7 +15,8 @@ class CreateLogsTable extends Migration
         Schema::create(
             env('DB_LOG_TABLE', 'logs'),
             function (Blueprint $table) {
-                $table->engine = 'InnoDB';
+                if(strtoupper(env('DB_LOG_ENGINE','InnoDB')) != 'NONE')
+                    $table->engine = env('DB_LOG_ENGINE','InnoDB');
 
                 $table->bigIncrements('id');
                 $table->string('instance')->index();

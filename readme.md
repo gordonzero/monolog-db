@@ -1,6 +1,6 @@
 ## Laravel 5.6 Monolog Database Handler.
 
-This package will log errors into MySQL database instead storage/log/laravel.log file.
+This package will log errors into a database instead storage/log/laravel.log file.
 
 ### Installation
 
@@ -19,10 +19,24 @@ Open up `config/logging.php` and find the `channels` key. Add the following chan
 ],
 ~~~
 
+Set up Environment Variables (see Below).
+
 Migrate the tables.
 
 ~~~
 php artisan migrate
+~~~
+
+## Database Engines
+
+Make sure before you migrate the table that you have set the envirment veriable for the database engine. This is done by adding the following line to the `.env` file
+~~~
+DB_LOG_ENGINE=InnoDB
+~~~
+
+To use the whatever the default database engine is or to specify no database engine during the table migration use the following
+~~~
+DB_LOG_ENGINE=NONE
 ~~~
 
 ## Environment configuration
