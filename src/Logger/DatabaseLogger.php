@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: michael.tombrello
- * Date: 4/17/2018
- * Time: 5:02 PM
- */
 
 namespace Logger;
+
 use Monolog\Logger;
-use Logger\Monolog\Handler\MysqlHandler;
 
 
 class DatabaseLogger
